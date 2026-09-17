@@ -1,0 +1,23 @@
+# Israel Road Accident Severity — dependencies
+# Install:  py -m pip install -r requirements.txt
+# Verified against Python 3.13.5 on Windows.
+
+# --- core analysis ---
+pandas>=2.2,<4
+numpy>=1.26,<3
+matplotlib>=3.8,<4
+
+# --- statistics (Wilson intervals, Cramer's V, chi-squared) ---
+scipy>=1.11,<2
+
+# --- data download (scripts/download_data.py) ---
+requests>=2.31,<3
+
+# --- notebook execution ---
+# ipykernel is what VS Code / Jupyter use to run the notebooks.
+# jupyterlab is only needed to run them outside an IDE.
+ipykernel>=6.29
+jupyterlab>=4.0
+
+# --- optional: read the .xlsx codebooks with pandas ---
+openpyxl>=3.1
