@@ -513,3 +513,143 @@ def build_features(
     result = add_locality_features(result)
 
     return result
+
+
+TARGET = "HUMRAT_TEUNA"
+YEAR = "SHNAT_TEUNA"
+
+
+SPLIT_ONLY_FEATURES = [
+    YEAR,
+]
+
+
+DROP_FEATURES = [
+    "pk_teuna_fikt",
+    "sug_tik",
+    "REHOV1",
+    "REHOV2",
+    "BAYIT",
+    "ZOMET_IRONI",
+    "ZOMET_LO_IRONI",
+    "YOM_LAYLA",
+    "SIMUN_TIMRUR",
+    "MEZEG_AVIR",
+    "MERHAK_EZEM",
+    "KIVUN_HAZIYA",
+    "MAAMAD_MINIZIPALI",
+    "STATUS_IGUN",
+    "file",
+]
+
+
+REPLACED_RAW_FEATURES = [
+    "KM",            # -> ROAD_SEGMENT
+    "SHAA",          # -> HOUR / TIME_OF_DAY
+    "HAD_MASLUL",    # -> ROAD_CARRIAGEWAY / ROAD_CARRIAGEWAY_TYPE
+    "RAV_MASLUL",    # -> ROAD_CARRIAGEWAY / ROAD_CARRIAGEWAY_TYPE
+    "TKINUT",        # -> ROAD_DEFECT
+    "TEURA",         # -> VISIBILITY_OR_LIGHTING_ISSUE
+    "PNE_KVISH",     # -> ROAD_SURFACE_CONDITION
+    "LO_HAZA",       # -> PEDESTRIAN_ACTIVITY
+]
+
+
+PRIMARY_FEATURES = [
+    # Accident context
+    "SUG_DEREH",
+    "SUG_TEUNA",
+
+    # Road characteristics
+    "MEHIRUT_MUTERET",
+    "ROHAV",
+    "SUG_EZEM",
+
+    # Time
+    "HODESH_TEUNA",
+    "YOM_BASHAVUA",
+
+    # Geographic context
+    "YEHIDA",
+    "MAHOZ",
+    "NAFA",
+    "ZURAT_ISHUV",
+
+    # Pedestrian context
+    "OFEN_HAZIYA",
+    "MEKOM_HAZIYA",
+
+    # Engineered road context
+    "ROAD_IS_URBAN",
+    "ROAD_IS_INTERSECTION",
+    "ROAD_CARRIAGEWAY",
+    "ROAD_CARRIAGEWAY_TYPE",
+    "ROAD_DEFECT",
+    "ROAD_SURFACE_CONDITION",
+
+    # Engineered time
+    "HOUR",
+    "TIME_OF_DAY",
+    "IS_WEEKEND",
+
+    # Engineered environment
+    "VISIBILITY_OR_LIGHTING_ISSUE",
+
+    # Engineered pedestrian
+    "PEDESTRIAN_ACTIVITY",
+    "CROSSWALK_USAGE",
+
+    # Engineered locality
+    "LOCALITY_SIZE",
+    "LOCALITY_FORM",
+    "LOCALITY_SECTOR",
+]
+
+
+EXPERIMENTAL_FEATURES = [
+    "THUM_GEOGRAFI",
+    "SEMEL_YISHUV",
+    "KVISH1",
+    "KVISH2",
+    "SUG_YOM",
+    "EZOR_TIVI",
+
+    # Spatial representations
+    "X",
+    "Y",
+    "GEO_GRID",
+
+    # Road-level representation
+    "ROAD_SEGMENT",
+]
+
+derived_features = [
+    # Road context
+    "ROAD_IS_URBAN",
+    "ROAD_IS_INTERSECTION",
+    "ROAD_CARRIAGEWAY",
+    "ROAD_CARRIAGEWAY_TYPE",
+    "ROAD_DEFECT",
+    "ROAD_SURFACE_CONDITION",
+
+    # Time
+    "HOUR",
+    "TIME_OF_DAY",
+    "IS_WEEKEND",
+
+    # Location
+    "ROAD_SEGMENT",
+    "GEO_GRID",
+
+    # Environment
+    "VISIBILITY_OR_LIGHTING_ISSUE",
+
+    # Pedestrian
+    "PEDESTRIAN_ACTIVITY",
+    "CROSSWALK_USAGE",
+
+    # Locality
+    "LOCALITY_SIZE",
+    "LOCALITY_FORM",
+    "LOCALITY_SECTOR",
+]
