@@ -124,6 +124,7 @@ notebooks/
   01_data_understanding.ipynb  data loading, temporal split, data dictionary
   02_feature_analysis.ipynb    per-feature EDA and feature decisions
   03_feature_engineering.ipynb transformations and validation
+  04_baseline_modeling.ipynb   baseline models with temporal cross-validation
 scripts/
   download_data.py             fetch the source data
   make_readme_figures.py       regenerate the figures above
@@ -136,7 +137,15 @@ src/
 ## Getting started
 
 ```bash
+# 1. Create and activate a virtual environment
+py -m venv .venv
+.venv\Scripts\activate
+source .venv/Scripts/activate
+
+# 2. Install dependencies
 py -m pip install -r requirements.txt
+
+# 3. Download the source data
 py scripts/download_data.py
 ```
 
@@ -145,14 +154,5 @@ and work through the notebooks in order. The download script resolves its URLs
 from the data portal's API at runtime, so it keeps working when the portal
 reassigns resource identifiers.
 
-## Next steps
-
-- Finish `03_feature_engineering.ipynb`: it currently imports a
-  `road_accident_ml` package that doesn't exist and needs to be wired up to
-  the `src/` modules instead, then validated against the temporal split
-- Baseline models with temporal cross-validation, macro F1 reported per fold
-- Comparison of geographic representations (district, subdistrict, road segment,
-  coordinate grid) for incremental value
-- Calibration against the shifting class prior
 
 [dataset]: https://data.gov.il/dataset/2023-puf
