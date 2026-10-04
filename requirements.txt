@@ -1,4 +1,5 @@
 # Israel Road Accident Severity — dependencies
+tqdm
 
 # --- core analysis ---
 pandas>=2.2,<4
